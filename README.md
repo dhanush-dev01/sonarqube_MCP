@@ -78,39 +78,9 @@ To build the Docker image:
 docker build -t sonarqube-mcp .
 ```
 
-### Running the Container
+### Adding it in MCP server
 
-Run the container with your SonarQube configuration (recommended approach):
-
-```bash
-docker run -d \
-  --name sonarqube-mcp \
-  --env-file .env \
-  sonarqube-mcp
-```
-
-Create a `.env` file with your configuration:
-```env
-SONARQUBE_URL=http://your-sonarqube-server:9000
-SONARQUBE_TOKEN=your-sonarqube-token
-PROJECT_KEY=your-project-key
-```
-
-### Docker Compose Example
-
-```yaml
-version: '3'
-services:
-  sonarqube-mcp:
-    build: .
-    env_file:
-      - .env
-    restart: unless-stopped
-```
-
-### Building the Image
-
-use in in you MCP cli by adding
+use it in you MCP cli by adding
 
 ```bash
       "sonarqubemcp": {
