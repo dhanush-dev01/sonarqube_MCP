@@ -78,9 +78,19 @@ To build the Docker image:
 docker build -t sonarqube-mcp .
 ```
 
-### Adding it in MCP server
+### 💡 How to Integrate This Tool with VS Code and Make It Smarter
 
-use it in you MCP cli by adding
+- Open your VS Code Settings
+  ![alt text](image-1.png)
+
+- In the search bar, type mcp 
+![alt text](image.png)
+
+- Click on “Edit in settings.json”
+- Under the mcp section, add the following configuration:
+
+
+### Adding it in MCP server config
 
 ```bash
       "sonarqubemcp": {
@@ -96,23 +106,15 @@ use it in you MCP cli by adding
           "SONARQUBE_TOKEN",
           "-e",
           "PROJECT_KEY",
-          "mcp-sonarqube-node"
+          "dhanushhypervisor/sonarqube_mcp_server"
         ],
         "env": {
-          "SONARQUBE_URL": "http://52.184.147.19:9000",
-          "SONARQUBE_TOKEN" : "squ_111508df0789913de879c34f492f6402b5c2bff5",
-          "PROJECT_KEY": "AITest"
+          "SONARQUBE_URL": "<server_url>",
+          "SONARQUBE_TOKEN" : "<server_token>",
+          "PROJECT_KEY": "<project_name>",
         }
       }
 ```
-
-```bash
-docker build -t sonarqube-mcp .
-```
-
-### Running the Container
-
-Run the container with your SonarQube configuration:
 
 
 
